@@ -13,23 +13,30 @@ import com.google.firebase.auth.FirebaseAuth
 
 class   LogIn : AppCompatActivity() {
 
+    //these are the views variable
     private lateinit var edtEmail: EditText
     private lateinit var edtPassword: EditText
     private lateinit var btnLogin: Button
     private lateinit var btnSignUp: Button
 
+    //IMPORTANT instance of firebase authentication
     private lateinit var mAuth: FirebaseAuth
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_log_in)
         supportActionBar?.hide()
 
+
+        //IMPORTANT Initialize Firebase Auth
         mAuth = FirebaseAuth.getInstance()
+
         edtEmail = findViewById(R.id.edt_email)
         edtPassword = findViewById(R.id.edt_pass)
         btnLogin = findViewById(R.id.btn_login)
         btnSignUp = findViewById(R.id.btn_signup)
 
+        //this intent on click will redirect to signup page
         btnSignUp.setOnClickListener{
             Intent(this,SignUp::class.java).also{
                 startActivity(it)
@@ -42,10 +49,14 @@ class   LogIn : AppCompatActivity() {
             else{
                 val email = edtEmail.text.toString()
                 val password = edtPassword.text.toString()
+
+                //now the email and password is sent to the login function
                 login(email,password)
             }
         }
     }
+
+    //IMPORTANT this function will verify if the user is valid or not
 
     private fun login(email:String,password: String){
 //logic for logging in  user
