@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "948054682814",
+    "firebase_url": "https://chatapplication-73a67-default-rtdb.firebaseio.com",
+    "project_id": "chatapplication-73a67",
+    "storage_bucket": "chatapplication-73a67.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:948054682814:android:1671b1556a7eae9958c2ef",
+        "android_client_info": {
+          "package_name": "com.example.chatapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "948054682814-mjuuo8s85qgilaanq5p8oi6v6l2d01ee.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXPL3hspJLsU5Cnc3pVkMxlOUMt2_2koI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "948054682814-mjuuo8s85qgilaanq5p8oi6v6l2d01ee.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:948054682814:android:963a2a01e534b39158c2ef",
+        "android_client_info": {
+          "package_name": "com.example.dotalk"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "948054682814-mjuuo8s85qgilaanq5p8oi6v6l2d01ee.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXPL3hspJLsU5Cnc3pVkMxlOUMt2_2koI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "948054682814-mjuuo8s85qgilaanq5p8oi6v6l2d01ee.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
