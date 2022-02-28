@@ -136,21 +136,6 @@ class ChatActivity : AppCompatActivity() {
         }
 
     }
-/*
-    private fun handleCameraImage(intent: Intent?) {
-
-        val bitmap = intent?.extras?.get("data") as Bitmap
-        //created a node for messages
-        mDbRef.child("chats").child(senderRoom!!).child("messages").push()
-            .setValue(messageObject).addOnSuccessListener {
-                mDbRef.child("chats").child(recieverRoom!!).child("messages").push()
-                    .setValue(messageObject)
-            }
-//        ivPhoto.setImageBitmap(bitmap)
-
-    }
-
-*/
 
 
 }
