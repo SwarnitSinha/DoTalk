@@ -2,8 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.dotalk">
 
-    <uses-feature android:name="android.hardware.camera"
-        android:required="true" />
+<!--    <uses-feature android:name="android.hardware.camera"-->
+<!--        android:required="true" />-->
+    
+<!--    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM"/>-->
 
     <application
         android:allowBackup="true"
@@ -12,6 +14,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DoTalk">
+
         <activity
             android:name=".SignUp"
             android:exported="true" />

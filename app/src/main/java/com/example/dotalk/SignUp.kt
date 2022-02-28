@@ -7,6 +7,7 @@ import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import com.example.dotalk.databinding.ActivitySignUpBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
@@ -16,19 +17,24 @@ import com.google.firebase.database.FirebaseDatabase
     private lateinit var edtEmail: EditText
     private lateinit var edtPassword: EditText
     private lateinit var btnSignUp: Button
-     private lateinit var mAuth: FirebaseAuth
 
+    private lateinit var binding: ActivitySignUpBinding
+
+
+     private lateinit var mAuth: FirebaseAuth
      private lateinit var mDbRef : DatabaseReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_sign_up)
+        binding = ActivitySignUpBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
         supportActionBar?.hide()
         mAuth = FirebaseAuth.getInstance()
-        edtName = findViewById(R.id.edt_name)
-        edtEmail = findViewById(R.id.edt_email)
-        edtPassword = findViewById(R.id.edt_pass)
-        btnSignUp = findViewById(R.id.btn_signup)
+        edtName = binding.edtName//findViewById(R.id.edt_name)
+        edtEmail = binding.edtEmail//findViewById(R.id.edt_email)
+        edtPassword = binding.edtPass//findViewById(R.id.edt_pass)
+        btnSignUp = binding.btnSignup //findViewById(R.id.btn_signup)
 
 
         btnSignUp.setOnClickListener {

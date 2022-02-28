@@ -19,6 +19,8 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import com.example.dotalk.R
 import androidx.core.content.FileProvider
+import com.example.dotalk.databinding.ActivityChatBinding
+import com.example.dotalk.databinding.ActivityMainBinding
 import java.security.AccessController.getContext
 
 
@@ -31,6 +33,8 @@ class ChatActivity : AppCompatActivity() {
     private lateinit var messageAdapter: MessageAdapter
     private lateinit var messageList: ArrayList<Message>
 
+    private lateinit var binding: ActivityChatBinding
+
 
 //    private lateinit var resultLauncher: ActivityResultLauncher<Intent>
 
@@ -41,7 +45,9 @@ class ChatActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_chat)
+
+        binding = ActivityChatBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         Log.d("tag","FLow comes to chat activity")
         //Extras from intent of User -> Chat
@@ -57,9 +63,9 @@ class ChatActivity : AppCompatActivity() {
 
         supportActionBar?.title = name
 
-        chatRecyclerView = findViewById(R.id.chatRecyclerView)
-        messageBox = findViewById(R.id.messageBox)
-        sendButton = findViewById(R.id.sendBtn)
+        chatRecyclerView = binding.chatRecyclerView //findViewById(R.id.chatRecyclerView)
+        messageBox = binding.messageBox //findViewById(R.id.messageBox)
+        sendButton = binding.sendBtn //findViewById(R.id.sendBtn)
 
 //        camButton = findViewById(R.id.cameraBtn)
 
@@ -103,6 +109,7 @@ class ChatActivity : AppCompatActivity() {
                         messageList.add(message!!)
                     }
                     messageAdapter.notifyDataSetChanged()
+
                 }
 
                 override fun onCancelled(error: DatabaseError) {
@@ -127,10 +134,6 @@ class ChatActivity : AppCompatActivity() {
 
             messageBox.setText("")
         }
-
-
-
-
 
     }
 /*

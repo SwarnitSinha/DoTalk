@@ -9,6 +9,7 @@ import android.widget.EditText
 import android.widget.Toast
 import com.example.dotalk.MainActivity
 import com.example.dotalk.R
+import com.example.dotalk.databinding.ActivityLogInBinding
 import com.google.firebase.auth.FirebaseAuth
 
 class   LogIn : AppCompatActivity() {
@@ -19,22 +20,25 @@ class   LogIn : AppCompatActivity() {
     private lateinit var btnLogin: Button
     private lateinit var btnSignUp: Button
 
+    private lateinit var binding: ActivityLogInBinding
+
     //IMPORTANT instance of firebase authentication
     private lateinit var mAuth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_log_in)
+        binding = ActivityLogInBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         supportActionBar?.hide()
 
 
         //IMPORTANT Initialize Firebase Auth
         mAuth = FirebaseAuth.getInstance()
 
-        edtEmail = findViewById(R.id.edt_email)
-        edtPassword = findViewById(R.id.edt_pass)
-        btnLogin = findViewById(R.id.btn_login)
-        btnSignUp = findViewById(R.id.btn_signup)
+        edtEmail = binding.edtEmail //findViewById(R.id.edt_email)
+        edtPassword =binding.edtPass //findViewById(R.id.edt_pass)
+        btnLogin = binding.btnLogin //findViewById(R.id.btn_login)
+        btnSignUp = binding.btnSignup //findViewById(R.id.btn_signup)
 
         if(mAuth.currentUser != null) {
             Intent(this, MainActivity::class.java).also {

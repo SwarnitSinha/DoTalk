@@ -5,9 +5,12 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
+import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.dotalk.databinding.ActivityMainBinding
 
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
@@ -22,10 +25,16 @@ class MainActivity : AppCompatActivity() {
     private lateinit var mAuth : FirebaseAuth
     private lateinit var mDbRef: DatabaseReference
 
+    private lateinit var binding : ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        val progressBar : ProgressBar = binding.progressBar
+        progressBar.visibility = View.VISIBLE
 
         mAuth = FirebaseAuth.getInstance()
         mDbRef = FirebaseDatabase.getInstance().getReference()
@@ -35,7 +44,7 @@ class MainActivity : AppCompatActivity() {
         adapter = UserAdapter(this,userList)
 
         //For showing the list of peoples
-        userRecyclerView = findViewById(R.id.userRecyclerView)
+        userRecyclerView = binding.userRecyclerView //findViewById(R.id.userRecyclerView)
         userRecyclerView.layoutManager = LinearLayoutManager(this)
         userRecyclerView.adapter = adapter
 
@@ -50,8 +59,10 @@ class MainActivity : AppCompatActivity() {
                     if(mAuth.currentUser?.uid!=currentUser?.uid)
                         userList.add(currentUser!!)
                 }
+                progressBar.visibility = View.GONE
                 adapter.notifyDataSetChanged()
             }
+
 
             override fun onCancelled(p0: DatabaseError) {
 //                TODO "Not yet implemented"
@@ -59,6 +70,7 @@ class MainActivity : AppCompatActivity() {
             }
 
         })
+
 
     }
 
