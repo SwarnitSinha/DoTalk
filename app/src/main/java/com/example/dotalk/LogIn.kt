@@ -36,6 +36,13 @@ class   LogIn : AppCompatActivity() {
         btnLogin = findViewById(R.id.btn_login)
         btnSignUp = findViewById(R.id.btn_signup)
 
+        if(mAuth.currentUser != null) {
+            Intent(this, MainActivity::class.java).also {
+                startActivity(it)
+                finish()
+            }
+        }
+
         //this intent on click will redirect to signup page
         btnSignUp.setOnClickListener{
             Intent(this,SignUp::class.java).also{

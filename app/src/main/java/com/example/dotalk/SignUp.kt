@@ -30,6 +30,7 @@ import com.google.firebase.database.FirebaseDatabase
         edtPassword = findViewById(R.id.edt_pass)
         btnSignUp = findViewById(R.id.btn_signup)
 
+
         btnSignUp.setOnClickListener {
             val name = edtName.text.toString()
             val email = edtEmail.text.toString()
@@ -53,7 +54,7 @@ import com.google.firebase.database.FirebaseDatabase
 
                      }
                  } else {
-                        Toast.makeText(this@SignUp,"Some error occured. Try again!",Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this@SignUp,"Some error occurred. Try again!",Toast.LENGTH_SHORT).show()
                  }
              }
      }
@@ -61,6 +62,7 @@ import com.google.firebase.database.FirebaseDatabase
      private fun addUserToDatabase(name: String, email: String, uid:String){
         mDbRef = FirebaseDatabase.getInstance().getReference()
 
+         //child will add a node to database
          mDbRef.child("user").child(uid).setValue(User(name,email, uid))
 
      }

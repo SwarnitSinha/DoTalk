@@ -11,6 +11,8 @@ import org.w3c.dom.Text
 
 class MessageAdapter(val context: Context,val messageList: ArrayList<Message>): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
+    //IMPORTANT here we will define two view holder one for sended messages and other for recieved messages
+
     val ITEM_RECEIVE = 1
     val ITEM_SENT = 2
 

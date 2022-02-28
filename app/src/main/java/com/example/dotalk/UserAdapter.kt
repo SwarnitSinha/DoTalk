@@ -2,6 +2,7 @@ package com.example.dotalk
 
 import android.content.Context
 import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -26,11 +27,12 @@ class UserAdapter(val context: Context, val userList: ArrayList<User> ) :
         holder.txtName.text = currentUser.name
 
         holder.itemView.setOnClickListener{
-            val intent = Intent(context,chatActivity::class.java)
+            Log.d("tag","On click listener works fine")
+
+            val intent = Intent(context,ChatActivity::class.java)
 
             intent.putExtra("name",currentUser.name)
             intent.putExtra("uid", currentUser.uid)
-
             context.startActivity(intent)
         }
     }

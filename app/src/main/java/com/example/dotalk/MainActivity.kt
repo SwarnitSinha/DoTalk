@@ -15,6 +15,7 @@ import com.google.firebase.ktx.Firebase
 
 
 class MainActivity : AppCompatActivity() {
+
     private lateinit var userRecyclerView : RecyclerView
     private lateinit var userList : ArrayList<User>
     private lateinit var adapter: UserAdapter
@@ -40,8 +41,9 @@ class MainActivity : AppCompatActivity() {
 
         mDbRef.child("user").addValueEventListener(object : ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
+                //snapshot is used exactly to get the data from the database
 
-                userList.clear()
+                userList.clear()  // for clearing the previous list
                 for(postSnapshot in snapshot.children){
 
                     val currentUser = postSnapshot.getValue(User::class.java)

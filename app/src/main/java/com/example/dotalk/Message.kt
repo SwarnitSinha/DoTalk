@@ -11,4 +11,5 @@ class Message {
         this.senderId = senderId
 
     }
+
 }

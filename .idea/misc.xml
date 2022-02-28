@@ -6,10 +6,13 @@
         <entry key="app/src/main/res/drawable-v24/btn_background.xml" value="0.1" />
         <entry key="app/src/main/res/drawable-v24/edt_background.xml" value="0.22760416666666666" />
         <entry key="app/src/main/res/drawable-v24/ic_login.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/activity_chat.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable-v24/ic_send.xml" value="0.22760416666666666" />
+        <entry key="app/src/main/res/drawable/camera_icon.xml" value="0.22760416666666666" />
+        <entry key="app/src/main/res/layout/activity_chat.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_log_in.xml" value="0.21145833333333333" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.14166666666666666" />
         <entry key="app/src/main/res/layout/recieved.xml" value="0.18981481481481483" />
+        <entry key="app/src/main/res/layout/sent.xml" value="0.13333333333333333" />
         <entry key="app/src/main/res/layout/user_layout.xml" value="0.18981481481481483" />
         <entry key="app/src/main/res/menu/menu.xml" value="0.18981481481481483" />
       </map>
